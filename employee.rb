@@ -9,4 +9,15 @@ class Employee
     @salary = salary
   end
 
+  def find_name
+    return self.name
+  end
+
+  def find_salary
+    return self.salary
+  end
+
+
+
+
 end

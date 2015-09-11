@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './employee_reviews'
+require './employee_reviews.rb'
 
 class EmployeeReviewsTest < Minitest::Test
 
@@ -25,5 +25,17 @@ class EmployeeReviewsTest < Minitest::Test
     fun = Department.new("Fun")
     fun.add_emp(zoey)
     assert_equal [zoey], fun.employees
+  end
+
+  def test_find_name
+    zoey = Employee.new("Zoey", "zoey@example.com", "555-5555", 200000)
+    zoey.find_name
+    assert_equal "Zoey", zoey.find_name
+  end
+
+  def test_find_salary
+    zoey = Employee.new("Zoey", "zoey@example.com", "555-5555", 200000)
+    zoey.find_salary
+    assert_equal 200000, zoey.find_salary
   end
 end
