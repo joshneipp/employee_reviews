@@ -44,4 +44,16 @@ class EmployeeReviewsTest < Minitest::Test
     fun.find_dept_name
     assert_equal "Fun", fun.name
   end
+
+  def test_get_all_salaries
+    fun = Department.new("Fun")
+    zoey = Employee.new("Zoey", "zoey@example.com", "555-5555", 200000)
+    joey = Employee.new("joey", "joey@example.com", "555-5555", 100000)
+    fun.add_emp(zoey)
+    fun.add_emp(joey)
+    fun.find_total_salaries
+    assert_equal 300000, fun.find_total_salaries
+  end
+
+
 end

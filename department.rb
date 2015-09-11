@@ -15,4 +15,11 @@ class Department
     return self.name
   end
 
+  def find_total_salaries
+    total_salaries = 0
+    self.employees.each do |i|
+      total_salaries += i.salary
+    end
+    return total_salaries
+  end
 end
