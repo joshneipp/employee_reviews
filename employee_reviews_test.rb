@@ -20,4 +20,10 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal 100000, employee.salary
   end
 
+  def test_add_employee_to_department
+    zoey = Employee.new("Zoey", "zoey@example.com", "555-5555", 200000)
+    fun = Department.new("Fun")
+    fun.add_emp(zoey)
+    assert_equal [zoey], fun.employees
+  end
 end
