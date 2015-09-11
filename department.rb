@@ -8,6 +8,11 @@ class Department
   end
 
   def add_emp(employee)
-    @employees << employee 
+    @employees << employee
   end
+
+  def find_dept_name
+    return self.name
+  end
+
 end

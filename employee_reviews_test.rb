@@ -38,4 +38,10 @@ class EmployeeReviewsTest < Minitest::Test
     zoey.find_salary
     assert_equal 200000, zoey.find_salary
   end
+
+  def test_find_dept_name
+    fun = Department.new("Fun")
+    fun.find_dept_name
+    assert_equal "Fun", fun.name
+  end
 end

@@ -18,6 +18,4 @@ class Employee
   end
 
 
-
-
 end
