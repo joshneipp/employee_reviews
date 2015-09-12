@@ -28,12 +28,17 @@ attr_reader :name, :email, :phone_num, :salary, :input
     Employee.new.review_score(@score) > 5 ? true : false
   end
 
-  def gets_raise(percent)
-    @salary += @salary * percent / 100
+  def gets_raise(value)
+    @salary += value
   end
+
+  # def gets_raise(percent)
+  #   @salary += @salary * percent / 100
+  # end
+
 end
 
-josh = Employee.new("Josh", "mail", "555", 10)
-puts josh.salary
-josh.gets_raise(20)
-puts josh.salary
+# josh = Employee.new("Josh", "mail", "555", 10)
+# puts josh.salary
+# josh.gets_raise(20)
+# puts josh.salary
