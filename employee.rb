@@ -1,12 +1,11 @@
 class Employee
 attr_reader :name, :email, :phone_num, :salary, :input
 
-  def initialize(name = "", email = "", phone_num = "", salary = 100000)
+  def initialize(name = "", email = "", phone_num = "", salary = 1000)
     @name = name
     @email = email
     @phone_num = phone_num
     @salary = salary
-
   end
 
   def find_name
@@ -28,4 +27,13 @@ attr_reader :name, :email, :phone_num, :salary, :input
   def satisfactory?
     Employee.new.review_score(@score) > 5 ? true : false
   end
+
+  def gets_raise(percent)
+    @salary += @salary * percent / 100
+  end
 end
+
+josh = Employee.new("Josh", "mail", "555", 10)
+puts josh.salary
+josh.gets_raise(20)
+puts josh.salary

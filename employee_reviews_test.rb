@@ -66,4 +66,10 @@ class EmployeeReviewsTest < Minitest::Test
     assert zoey.satisfactory?
     refute joey.satisfactory?
   end
+
+  def test_employee_raise
+    zoey = Employee.new("Zoey", "zoey@example.com", "555", 1000000)
+    zoey.gets_raise(20)
+    assert_equal zoey.salary, 1200000
+  end
 end
