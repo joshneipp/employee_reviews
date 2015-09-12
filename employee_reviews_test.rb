@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './employee_reviews.rb'
+require 'byebug'
 
 class EmployeeReviewsTest < Minitest::Test
 
@@ -52,12 +53,17 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal 300000, fun.find_total_salaries
   end
 
-  def test_review
+  def test_review_text
     some_text = "Review text for Zoey"
-    assert_equal some_text, Employee.new.review("Review text for Zoey")
+    assert_equal some_text, Employee.new.review_text("Review text for Zoey")
   end
 
-
-
-
+  def test_employee_is_satisfactory?
+    zoey = Employee.new
+    joey = Employee.new
+    zoey.review_score(7)
+    joey.review_score(5)
+    assert zoey.satisfactory?
+    refute joey.satisfactory?
+  end
 end
