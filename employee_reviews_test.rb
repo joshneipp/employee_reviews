@@ -28,15 +28,12 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_find_name
-    zoey = Employee.new("Zoey", "zoey@example.com", "555-5555", 200000)
-    zoey.find_name
-    assert_equal "Zoey", zoey.find_name
+    assert_equal "Zoey", Employee.new("Zoey").name
   end
 
   def test_find_salary
     zoey = Employee.new("Zoey", "zoey@example.com", "555-5555", 200000)
-    zoey.find_salary
-    assert_equal 200000, zoey.find_salary
+    assert_equal 200000, zoey.salary
   end
 
   def test_find_dept_name
@@ -54,6 +51,13 @@ class EmployeeReviewsTest < Minitest::Test
     fun.find_total_salaries
     assert_equal 300000, fun.find_total_salaries
   end
+
+  def test_review
+    some_text = "Review text for Zoey"
+    assert_equal some_text, Employee.new.review("Review text for Zoey")
+  end
+
+
 
 
 end

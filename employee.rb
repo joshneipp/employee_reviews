@@ -10,12 +10,17 @@ class Employee
   end
 
   def find_name
-    return self.name
+    self.name
   end
 
   def find_salary
-    return self.salary
+    self.salary
   end
+
+  def review(text = "")
+    text
+  end
+
 
 
 end

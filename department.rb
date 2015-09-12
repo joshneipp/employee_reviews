@@ -18,8 +18,9 @@ class Department
   def find_total_salaries
     total_salaries = 0
     self.employees.each do |i|
-      total_salaries += i.salary
+      total_salaries += i.find_salary
     end
     return total_salaries
   end
+
 end

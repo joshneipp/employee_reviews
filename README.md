@@ -6,4 +6,4 @@
 #### Part 1
 I estimated this would take about 6 hours.
 
-Actual time:
+Actual time: 6 hours Friday 
