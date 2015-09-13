@@ -84,7 +84,7 @@ class EmployeeReviewsTest < Minitest::Test
     zoey.review_score(6)
     joey.review_score(3)
     sammy.review_score(9)
-    fun.give_department_raise(5000) { |employees| employees.salary < 300000 }
+    fun.give_department_raise(5000) { |x| x.salary < 300000 }
     assert_equal zoey.salary, 202500
     assert_equal sammy.salary, 400000
     assert_equal joey.salary, 82500
