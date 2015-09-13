@@ -1,10 +1,10 @@
 class Department
 
-  attr_reader :name, :employees, :raise_each
+  attr_reader :name, :employees
 
-  def initialize(name)
+  def initialize(name: , employees: [])
     @name = name
-    @employees = []
+    @employees = employees
   end
 
   def add_emp(employee)

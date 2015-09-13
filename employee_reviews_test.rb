@@ -6,10 +6,7 @@ require 'byebug'
 class EmployeeReviewsTest < Minitest::Test
 
   def test_new_department
-    assert Department.new(name = "")
-    assert_raises(ArgumentError) do
-      Department.new
-    end
+    assert Department.new(name: "Fun")
   end
 
   def test_new_employee
@@ -23,7 +20,7 @@ class EmployeeReviewsTest < Minitest::Test
 
   def test_add_employee_to_department
     zoey = Employee.new("Zoey", "zoey@example.com", "555-5555", 200000)
-    fun = Department.new("Fun")
+    fun = Department.new(name: "Fun")
     fun.add_emp(zoey)
     assert_equal [zoey], fun.employees
   end
@@ -38,13 +35,13 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_find_dept_name
-    fun = Department.new("Fun")
+    fun = Department.new(name: "Fun")
     fun.find_dept_name
     assert_equal "Fun", fun.name
   end
 
   def test_get_all_salaries
-    fun = Department.new("Fun")
+    fun = Department.new(name: "Fun")
     zoey = Employee.new("Zoey", "zoey@example.com", "555-5555", 200000)
     joey = Employee.new("joey", "joey@example.com", "555-5555", 100000)
     fun.add_emp(zoey)
@@ -74,7 +71,7 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_department_raise
-    fun = Department.new("Fun")
+    fun = Department.new(name: "Fun")
     zoey  = Employee.new("Zoey",  "zoey@example.com",  "555-5555", 200000)
     joey  = Employee.new("Joey",  "joey@example.com",  "555-5556", 80000)
     sammy = Employee.new("Sammy", "sammy@example.com", "555-5557", 400000)
