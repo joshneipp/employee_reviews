@@ -1,4 +1,4 @@
-#require './employee'
+require './employee'
 
 class Department
 
@@ -19,51 +19,32 @@ class Department
 
   def find_total_salaries
     total_salaries = 0
-    self.employees.each do |i|
-      total_salaries += i.find_salary
-    end
+    self.employees.each { |e| total_salaries += e.salary }
     return total_salaries
   end
 
-  def deserving_employees
-    @worthy_employees = []  #This is a horrible name for any variable.
-    self.employees.each do |e|
-      if e.satisfactory?
-        @worthy_employees << e
-      else
-        false
-      end
-    end
-    return @worthy_employees
-  end
 
-  def give_department_raise(dollars)
-    raise_each = dollars / self.deserving_employees.length
-    self.deserving_employees.each { |x| x.gets_raise(raise_each) }
-  end
-
-  # def gets_raise(dollars)
-  #   num_raises = 0
+  # This works for the first "give department raise" requirement 
+  # def deserving_employees
+  #   @worthy_employees = []  #This is a horrible name for a variable.
   #   self.employees.each do |e|
   #     if e.satisfactory?
-  #       num_raises += 1
-  #     end
-  #   end
-  #   raise_each = dollars / num_raises
-  #   puts raise_each
-  #   self.employees.each do |i|
-  #     if i.satisfactory? do
-  #       i.salary += raise_each
-  #       puts raise_each
-  #       puts i.salary
-  #     end
-  #       puts raise_each
+  #       @worthy_employees << e
   #     else
-  #       puts "not #{i.name}"
-  #       puts "not #{i.salary}"
+  #       false
   #     end
   #   end
+  #   return @worthy_employees
   # end
+  #
 
 
+  def give_department_raise(dollars)
+    employees_getting_raises = []
+    self.employees.each do |x|
+      employees_getting_raises << x if x.salary < 300000
+    end
+    raise_each = dollars / employees_getting_raises.length
+    employees_getting_raises.each { |x| x.gets_raise(raise_each) }
+  end
 end

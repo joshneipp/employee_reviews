@@ -1,7 +1,7 @@
 class Employee
 attr_reader :name, :email, :phone_num, :salary, :input
 
-  def initialize(name = "", email = "", phone_num = "", salary = 1000)
+  def initialize(name = "", email = "", phone_num = "555", salary = 1000)
     @name = name
     @email = email
     @phone_num = phone_num
@@ -13,7 +13,7 @@ attr_reader :name, :email, :phone_num, :salary, :input
   end
 
   def find_salary
-    self.salary
+    @salary
   end
 
   def review_text(review = "")

@@ -76,7 +76,7 @@ class EmployeeReviewsTest < Minitest::Test
   def test_department_raise
     fun = Department.new("Fun")
     zoey  = Employee.new("Zoey",  "zoey@example.com",  "555-5555", 200000)
-    joey  = Employee.new("Joey",  "joey@example.com",  "555-5556", 100000)
+    joey  = Employee.new("Joey",  "joey@example.com",  "555-5556", 80000)
     sammy = Employee.new("Sammy", "sammy@example.com", "555-5557", 400000)
     fun.add_emp(zoey)
     fun.add_emp(joey)
@@ -84,9 +84,9 @@ class EmployeeReviewsTest < Minitest::Test
     zoey.review_score(6)
     joey.review_score(3)
     sammy.review_score(9)
-    fun.give_department_raise(5000)
-    assert_equal zoey.salary, 202500  #zoey should get a 2500 raise
-    assert_equal sammy.salary, 402500 #sammy should get a 2500 raise
-    assert_equal joey.salary, 100000  #joey shouldn't get a raise. ever.
+    fun.give_department_raise(5000) { |employees| employees.salary < 300000 }
+    assert_equal zoey.salary, 202500
+    assert_equal sammy.salary, 400000
+    assert_equal joey.salary, 82500
   end
 end
