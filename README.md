@@ -2,8 +2,6 @@
 
 ## Description
 
-## Time Estimate
-#### Part 1
-I estimated this would take about 6 hours.
-
-Actual time: 6 hours Friday 
+This program keeps track of employees, their information, and the departments
+within which they work. It also allows for giving employees raises based on
+a variety of different parameters, including performance, current salary, etc.

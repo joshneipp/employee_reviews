@@ -37,8 +37,3 @@ attr_reader :name, :email, :phone_num, :salary, :input
   # end
 
 end
-
-# josh = Employee.new("Josh", "mail", "555", 10)
-# puts josh.salary
-# josh.gets_raise(20)
-# puts josh.salary
